@@ -1,0 +1,353 @@
+@charset "UTF-8";
+
+/* CSS Document */
+/* ******************************************************************
+	@This stylesheet Information{
+		CSS File Name: common.css
+
+		Setting of: General pages
+			1: General setting
+			2: container setting
+	}
+****************************************************************** */
+
+/*===================================================================
+	1: General setting
+===================================================================*/
+* {
+	margin:0;
+}
+body {
+        background-image: url("/images/background.png");
+        background-attachment: fixed;
+        background-position: right bottom;
+	padding:0;
+	margin:0;
+	font-size:13px;
+	color:#333;
+	background-color:#FFFFFF;
+	line-height:1.4em;
+	font-family: 'MS PGothic',Verdana,Arial,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',Osaka,sans-serif;
+	text-align:center;
+	word-break:break-all;
+}
+div, p, span, a, input, select, textarea, form, ul, ol, li, dl, dt, dd, tr, td, table {
+	font-size:100%;
+}
+ul, ol, table, td, th, p {
+	padding:0;
+}
+html>body div img
+{
+	/*hidden from IE 5-6 */
+	margin-top: 0;
+	/* to clean up, just in case IE later supports valign! */
+	vertical-align: middle;
+}
+
+/* Link Color*/
+a:link{color:#990000; text-decoration:underline;}
+a:visited{color:#990000; text-decoration:underline;}
+a:hover{color:#003399; text-decoration:none;}
+a:active{color:#003399; text-decoration:none;}
+a:hover img
+{
+	filter: alpha(opacity=80);
+	moz-opacity: .70;
+	opacity: .70;
+}
+
+img, a {
+	border:0;
+	outline:none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+	font-size:1em;
+}
+strong, em {
+	font-weight:bold;
+	font-style:normal;
+}
+ul, ol {
+	list-style:none;
+}
+hr {
+	display:none;
+}
+address {
+	font-style:normal;
+}
+.clear {
+	clear:both;
+}
+.line_dot
+{
+	width:100%;
+	height:10px;
+	background-image:url(../../images/line_dot.gif);
+	background-repeat:repeat-x;
+	background-position:center;
+}
+.msg_error
+{
+	color:#FF0000;
+	font-size:12px;
+}
+.error_date{
+	width:310px;
+}
+.class_error_date_from{
+	float:left;
+	color:#FF0000;
+	font-size:12px;
+	width:190px;
+}
+.class_error_date_to{
+	float:right;
+	color:#FF0000;
+	font-size:12px;
+}
+.start_required
+{
+	color:#FF0000;
+	font-size:12px;
+}
+.start_required_w
+{
+	color:#FFFFFF;
+	font-size:12px;
+}
+.no_data_msg
+{
+	color:#FF0000;
+	margin:20px auto auto 50px;
+}
+.error_title
+{
+	color:#FF0000;
+	padding:20px;
+}
+.error_throw
+{
+	border:1px solid #FF0000;
+	background-color:#CCCCCC;
+	margin:20px;
+}
+.btn_error_back
+{
+	margin:20px;
+}
+/*===================================================================
+	2: container setting
+===================================================================*/
+div#wrapper {
+	margin:0px;
+	padding:0px;
+	width :100%;
+	height:auto;
+	text-align:center;
+}
+
+div#container {
+	margin:auto;
+	padding:0;
+	text-align:left;
+	width:100%;
+	height:100%;
+}
+/* *****************************************************************
+	Left,right Conten on top page
+****************************************************************** */
+div#left_content
+{
+	float:left;
+	width:160px;
+	margin:10px;
+	height:100%;
+	border:1px solid #666666;
+	z-index:99999;
+	background-color:#FFFFFF;
+}
+div#right_content
+{
+	position:absolute;
+	top:10px;
+	left:200px;
+	width:auto;
+}
+/* *****************************************************************
+	End left,right Conten on top page
+****************************************************************** */
+
+/* *****************************************************************
+	Start Header
+****************************************************************** */
+.main_header
+{
+	height:auto;
+}
+div#head_nav {
+	display:block;
+	padding-top:5px;
+	float:right;
+}
+div#head_nav ul li {
+	display:inline;
+	padding:0 12px 0 0;
+}
+div#logo
+{
+	float:left;
+}
+.head_bg_line
+{
+	height:2px;
+	widows:100%;
+	background-color:#CCCCCC;
+}
+/* *****************************************************************
+	End Header
+****************************************************************** */
+
+/* *****************************************************************
+	Start footer
+****************************************************************** */
+.main_footer
+{
+	margin-top:20px;
+}
+.copy_right
+{
+	margin:10px auto auto auto;
+	text-align:center;
+}
+/* *****************************************************************
+	End Footer
+****************************************************************** */
+/* *****************************************************************
+	Start Left Menu
+****************************************************************** */
+.menu_group
+{
+	font-weight:bold;
+}
+.menu_item
+{
+	margin:6px auto 6px 15px;
+}
+.menu_item_s
+{
+	margin:6px auto 6px 15px;
+}
+
+/* *****************************************************************
+	End Left Menu
+****************************************************************** */
+/* *****************************************************************
+	Table Style gird
+****************************************************************** */
+.rounded-corner
+{
+	border-collapse:collapse;
+	font-size:12px;
+	margin:1px;
+	text-align:left;
+}
+.rounded-corner th {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#B9C9FE none repeat scroll 0 0;
+	font-size:12px;
+	padding:3px;
+	text-align:center;
+	vertical-align:middle;
+	border-right:1px solid #666666;
+	border-top:1px solid #666666;
+	border-left:1px solid #666666;
+	white-space:nowrap;
+}
+.rounded-corner tr {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+}
+.rounded-corner td {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	border-top:1px solid #666666;
+	border-right:1px solid #666666;
+	border-left:1px solid #666666;
+	border-bottom:1px solid #666666;
+	color:#000000;
+	padding:3px;
+}
+.rounded-corner-order
+{
+	border-collapse:collapse;
+	font-size:12px;
+	margin:1px;
+	text-align:left;
+}
+.rounded-corner-order th {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#B9C9FE none repeat scroll 0 0;
+	font-size:12px;
+	padding:3px;
+	text-align:center;
+	vertical-align:middle;
+	border-right:1px solid #666666;
+	border-top:1px solid #666666;
+	border-left:1px solid #666666;
+	white-space:nowrap;
+}
+.rounded-corner-order tr {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+}
+.rounded-corner-order td {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	border-top:1px solid #666666;
+	border-right:1px solid #666666;
+	border-left:1px solid #666666;
+	border-bottom:1px solid #666666;
+	color:#000000;
+	padding:3px;
+}
+/* *****************************************************************
+	End table Style gird
+****************************************************************** */
+.transparent_attach_btn{
+	position: absolute;
+	height:30px;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	-moz-outlinestyle:none;
+}
+.box_login{
+	margin:auto;
+	height:200px;
+	width:500px;
+	padding-top:100px;
+}
+
+div.logo {
+    background-image: url(/images/logo.png);
+    background-repeat: no-repeat;
+    -moz-background-size: contain;
+    background-size: contain;
+    width: 129px;
+    height: 48px;
+    margin: 15px 0px 0px 37px;
+
+}

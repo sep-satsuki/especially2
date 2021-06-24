@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* *****************************************************************
+	CSS for list member and serch condition
+****************************************************************** */
+.left_condition
+{
+	float:left;
+}
+.right_condition
+{
+	float:left;
+}
+.center_condition
+{
+	float:left;
+}
+.condition_item
+{
+	width:350px;
+	margin:5px;
+}
+.condition_item .condition_title
+{
+	width:100px;
+	float:left;
+}
+.condition_item .condition_control
+{
+	float:left;
+	width:200px;
+}
+.condition_item .condition_control input
+{
+	width:200px;
+}
+.cbo_date
+{
+	margin:10px 0px 0px 105px;
+}
+.btn_search
+{
+	margin:10px auto auto 200px;
+}
+.table_content
+{
+	overflow-x:scroll;
+	overflow-Y:hidden;
+	border:1px solid #CCCCCC;
+}
+/* *****************************************************************
+	End CSS for list member and serch condition
+****************************************************************** */
+/* *****************************************************************
+	CSS for change member form
+****************************************************************** */
+.regist_area
+{
+	width:500px;
+	border-style: solid;
+	border-color: #d3d3d3;
+	padding: 10px;
+}
+.regist_text
+{
+	width:250px;
+}
+.regist_btn
+{
+	width:100px;
+}
+
+.status_area
+{
+	width:70px;
+	text-align: center;
+}
+.conf_area
+{
+	width:320px;
+	text-align: left;
+}
+.date_area
+{
+	width:120px;
+	text-align: left;
+}
+.conf_text
+{
+	width:250px;
+	text-align: left;
+}
+/* *****************************************************************
+	End CSS for change member form
+****************************************************************** */
