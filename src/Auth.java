@@ -49,6 +49,9 @@ public class Auth extends HttpServlet {
 		String UPDATE_USER_ID="";
 		String Query= "";
 		String STATUS1 = "";
+		
+		int listCnt = 0;
+		String nowPage="";
 
 		final String ERR_MESSAGE="未入力で登録することはできません";
 
@@ -102,6 +105,8 @@ public class Auth extends HttpServlet {
 
 				}
 				ResultSet rs=(ResultSet)request.getAttribute("Result");
+				
+
 
 
 				final String URL
@@ -162,6 +167,15 @@ public class Auth extends HttpServlet {
 		String SelectQuery="SELECT ID,AUTH_NAME,STATUS,UPDATE_USER_ID,REGIST_DATE,UPDATE_DATE FROM mst_auth";
 		//取得対象全件数を取得するクエリ
 		String CntQuery="SELECT COUNT(*) count FROM mst_auth";
+		
+		//pageがnullの場合はnowPageに初期値1を設定、null以外の場合はnowPageにリクエスト("page")を設定
+		if(request.getParameter("page")==null) {
+			nowPage="1";
+		}else {
+			nowPage=request.getParameter("page");
+		}
+		//limitStaに(nowPage-1)*10の値を設定
+		int limitSta=(Integer.parseInt(nowPage) -1) * 10;
 
 		final String URL
 	    = "jdbc:mysql://localhost:3306/especially?serverTimezone=JST";
@@ -225,6 +239,8 @@ public class Auth extends HttpServlet {
 	    //Auth.jspに値を渡している
 		request.setAttribute("Result",rs);
 		request.setAttribute("errmsg",errmsg);
+		request.setAttribute("listCnt",listCnt);
+		request.setAttribute("page",nowPage);
 
 
 		//画面遷移
