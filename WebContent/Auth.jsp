@@ -33,14 +33,10 @@
 	int listCnt=0;
 	String nowPage="";
 	int maxPage=0;
-	
-	
-	
-
 %>
 
 <%!
-	String SearchNamePage="";	
+	String SearchNamePage="";
 
 %>
 
@@ -144,9 +140,9 @@
     //現在表示中のページ (引数として受け取ったnowPageをint型に変換)
     int currentPage = Integer.parseInt(nowPage);
     //表示させたいページリンク数の最大数
-	 int PAGE_RANGE = 10;
+	 int PAGE_RANGE = 5;
    //現在表示中のページの前後に表示したいページリンク数
-   int PAGE_GAP = 3;
+   int PAGE_GAP = 2;
    //現在表示中のページを基準にしたページリンクの開始ページ
    int currentStartPage;
    //現在表示中のページを基準にしたページリンクの終了ページ
@@ -180,15 +176,15 @@
       pagenation += "<li><</li>";
       //そうじゃない時
     } else {
-      pagenation += "<li><a href=\"./ListBL?page=1\"><<</a></li>";
-      pagenation += "<li><a href=\"./ListBL?page=" + (currentPage - 1) + SearchNamePage + "\"><</a></li>";
+      pagenation += "<li><a href=\"./Auth?page=1\"><<</a></li>";
+      pagenation += "<li><a href=\"./Auth?page=" + (currentPage - 1) + SearchNamePage + "\"><</a></li>";
     }
     //ページ数リンクの作成
     for(int i = currentStartPage; i <= currentEndPage; i++) {
       if(currentPage == i) {
         pagenation += "<li class=\"current-page\">" + i + "</li>";
       } else {
-        pagenation += "<li><a href=\"./ListBL?page=" + i + SearchNamePage + "\">" + i + "</a></li>";
+        pagenation += "<li><a href=\"./Auth?page=" + i + SearchNamePage + "\">" + i + "</a></li>";
       }
     }
     //現在表示ページの1つ先のページへのリンク「>」と 最後のページへのリンク「>>」を作成
@@ -196,8 +192,8 @@
       pagenation += "<li>></li>";
       pagenation +=	"<li>>></li>";
     } else {
-      pagenation += "<li><a href=\"./ListBL?page=" + (currentPage + 1) + SearchNamePage + "\">></a></li>";
-      pagenation += "<li><a href=\"./ListBL?page=" + maxPage + SearchNamePage +"\">>></a></li>";
+      pagenation += "<li><a href=\"./Auth?page=" + (currentPage + 1) + SearchNamePage + "\">></a></li>";
+      pagenation += "<li><a href=\"./Auth?page=" + maxPage + SearchNamePage +"\">>></a></li>";
     }
     pagenation += "</ul>";
     return pagenation;

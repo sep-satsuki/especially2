@@ -49,7 +49,7 @@ public class Auth extends HttpServlet {
 		String UPDATE_USER_ID="";
 		String Query= "";
 		String STATUS1 = "";
-		
+
 		int listCnt = 0;
 		String nowPage="";
 
@@ -105,7 +105,7 @@ public class Auth extends HttpServlet {
 
 				}
 				ResultSet rs=(ResultSet)request.getAttribute("Result");
-				
+
 
 
 
@@ -167,7 +167,7 @@ public class Auth extends HttpServlet {
 		String SelectQuery="SELECT ID,AUTH_NAME,STATUS,UPDATE_USER_ID,REGIST_DATE,UPDATE_DATE FROM mst_auth";
 		//取得対象全件数を取得するクエリ
 		String CntQuery="SELECT COUNT(*) count FROM mst_auth";
-		
+
 		//pageがnullの場合はnowPageに初期値1を設定、null以外の場合はnowPageにリクエスト("page")を設定
 		if(request.getParameter("page")==null) {
 			nowPage="1";
@@ -175,7 +175,9 @@ public class Auth extends HttpServlet {
 			nowPage=request.getParameter("page");
 		}
 		//limitStaに(nowPage-1)*10の値を設定
-		int limitSta=(Integer.parseInt(nowPage) -1) * 10;
+		int limitSta=(Integer.parseInt(nowPage) -1) * 5;
+
+		String sLimit = " limit " + limitSta + ", 5";
 
 		final String URL
 	    = "jdbc:mysql://localhost:3306/especially?serverTimezone=JST";
@@ -216,10 +218,20 @@ public class Auth extends HttpServlet {
 			e.printStackTrace();
 		}
 
+	  //listCntにフィールド(count)の値を取得して、返却している
+	    try {
+	    	rs.next();
+			listCnt= rs.getInt("count");
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+
 
 	    //SelectQueryの準備をしている、引数のSQLを設定したものがps（変数）に入ってる、sqlの実行準備ができた
 	    try {
-			ps= connect.prepareStatement(SelectQuery);
+			ps= connect.prepareStatement(SelectQuery + sLimit);
 		} catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
