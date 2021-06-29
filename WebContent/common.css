@@ -351,3 +351,10 @@ div.logo {
     margin: 15px 0px 0px 37px;
 
 }
+div.pagenation{
+	width:50px;
+	display:inline-block;
+	color:#FF0000;
+
+
+}
